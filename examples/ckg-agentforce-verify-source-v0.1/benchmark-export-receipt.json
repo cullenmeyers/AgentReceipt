@@ -1,0 +1,19 @@
+{
+  "claim": {
+    "receipt_version": "experimental-interop-v0.1",
+    "receipt_role": "server_attested",
+    "event_id": "ckg-benchmark-export-018f6f30-b385-75b3-80b2-00c649991b76",
+    "timestamp": "2026-07-27T18:45:03.104Z",
+    "action_type": "ckg.benchmark_result.exported",
+    "status": "success",
+    "domain": "agentforce",
+    "queries_tested": 30,
+    "f1_score": 0.471,
+    "dataset_hash": "sha256:08ad9f66223ea1f14293e748a1af9b36f9b982c82d88a6d88f16aec46f809268",
+    "benchmark_artifact_hash": "sha256:44e6f7779c44a7a059d2e0f7c79dff60fddf86b501758c0311bd9df2655d7bd8",
+    "artifact_hash_alg": "sha256"
+  },
+  "signature": "ed25519:3wDRnx2RDVrNyz3xbR8j/aNlBjCnbLS6fWADCaqa6gu/vCFZ6Yjgn9A5c12e6lbyzbhSTPNa2TS3uxX/gvCSCw==",
+  "public_key": "vwZOfUFf+bn5ADtpm6zXv3BvhENbFqVHAY7yZcM40Sc=",
+  "public_key_id": "sha256:1f54177dbb8cf01be1e1a15a402ed5ed7d4c357ba2caa2b4faa0112cb03ee45a"
+}

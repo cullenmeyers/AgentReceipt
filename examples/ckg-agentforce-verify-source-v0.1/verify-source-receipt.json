@@ -1,0 +1,17 @@
+{
+  "claim": {
+    "receipt_version": "experimental-interop-v0.1",
+    "receipt_role": "server_attested",
+    "event_id": "ckg-verify-source-018f6f2e-7d31-7b41-9c2d-72e2742e30ab",
+    "timestamp": "2026-07-27T18:42:16.381Z",
+    "action_type": "ckg.verify_source",
+    "status": "success",
+    "concept_label": "Einstein Trust Layer",
+    "source_url": "https://developer.salesforce.com/docs/einstein-trust-layer",
+    "source_hash": "sha256:3ee01ef8727e474642a7d34a8f975504830f71e830e43ea398585afa3f7ec914",
+    "artifact_hash_alg": "sha256"
+  },
+  "signature": "ed25519:kYdjb1I2UG+IMz4zNGG8+S3y79qg4nnvVutl7sDmqpoD1XQRwZVQ2SHHoBaY6i0UkfTo3LAB8OCk28HNXV4KAA==",
+  "public_key": "vwZOfUFf+bn5ADtpm6zXv3BvhENbFqVHAY7yZcM40Sc=",
+  "public_key_id": "sha256:1f54177dbb8cf01be1e1a15a402ed5ed7d4c357ba2caa2b4faa0112cb03ee45a"
+}
