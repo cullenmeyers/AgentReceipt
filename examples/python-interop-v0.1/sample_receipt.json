@@ -1,0 +1,20 @@
+{
+  "claim": {
+    "receipt_version": "0.1",
+    "receipt_role": "server_attested",
+    "event_id": "example-artifact-001",
+    "timestamp": "2026-07-31T12:00:00.000Z",
+    "action_type": "example.artifact.exported",
+    "status": "success",
+    "target_ref": "artifact.bin",
+    "artifact_hash": "sha256:9f64a747e1b97f131fabb6b447296c9b6f0201e79fb3c5356e6c77e89b6a806a",
+    "artifact_hash_alg": "sha256",
+    "workflow_correlation_id": "workflow-example-001",
+    "host_metadata": {
+      "export_format": "binary",
+      "source": "host_application"
+    }
+  },
+  "signature": "7/8aQeygL1NTzYVlX4CZ3CbcCNFrg9n4eyiTC5G0EsUBUXJSpJBS5l6R3i51331XfK4kfPvTmcJNOntz9g97Aw==",
+  "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+}
