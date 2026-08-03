@@ -28,6 +28,8 @@ The proof kit uses demo-only signer trust. Receipts prove signature and content 
 
 External adapters can target the minimal, experimental [BoundaryAttest Interop Profile v0.1](docs/interop-profile-v0.1.md); the [dependency-free adapter guide](docs/interop-adapter-guide-v0.1.md) provides the short implementation path. Its [JSON Schema](docs/schemas/interop-receipt-v0.1.schema.json) and [verification trust/limitations note](docs/interop-verification-limits-v0.1.md) define the structural contract and the narrow meaning of a passing check.
 
+For a concise index of current external implementations, integration examples, and validated receipt patterns, see [External interop patterns](docs/external-interop-patterns.md).
+
 ## Best Conceptual Demo
 
 ```sh
