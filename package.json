@@ -36,6 +36,7 @@
     "example:ckg-agentforce-verify-source-v0.1": "node dist/examples/ckg-agentforce-verify-source-v0.1/verify-fixtures.js",
     "example:trustmcp-post-scan": "node dist/examples/trustmcp-post-scan-receipt/trustmcp-post-scan-receipt.js",
     "example:faf-mcp-handoff-v0.1": "node dist/examples/faf-mcp-handoff-v0.1/generate-faf-examples.js",
+    "example:oe-mcp-action-log-receipt-v0.1": "node dist/examples/oe-mcp-action-log-receipt-v0.1/verify-example.js",
     "example:benchmark-result-public-v0.1": "node dist/examples/benchmark-result-public-v0.1/verify-canonical-artifact.js",
     "reset:demo": "node scripts/reset-demo.mjs",
     "reset:all": "node scripts/reset-all.mjs",

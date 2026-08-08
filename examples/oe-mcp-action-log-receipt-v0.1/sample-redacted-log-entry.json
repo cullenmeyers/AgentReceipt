@@ -1,0 +1,19 @@
+{
+  "event_timestamp": "2026-08-01T19:42:10.125Z",
+  "connector_name": "synthetic-crm",
+  "tool_name": "contacts.update",
+  "input": {
+    "representation": "sha256_digest_only",
+    "hash": "sha256:3c43f300f06cbd638a3fc92c342bcb9722d9f9e6343e750f491fde2a6202a1d3"
+  },
+  "result": {
+    "status": "success",
+    "representation": "sha256_digest_only",
+    "hash": "sha256:59306afc6f99e176efaa4869f09b80b5ee70c8b48093fa195e9c2d1ecb93bf19"
+  },
+  "redaction": {
+    "profile": "oe-mcp-portable-receipt-example",
+    "version": "0.1",
+    "notice": "Synthetic example; raw connector payloads and credentials are excluded."
+  }
+}

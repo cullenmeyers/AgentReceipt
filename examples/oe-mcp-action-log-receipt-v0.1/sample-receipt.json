@@ -1,0 +1,32 @@
+{
+  "claim": {
+    "receipt_version": "0.1",
+    "receipt_role": "client_observed",
+    "event_id": "evt_oe_mcp_log_receipt_synthetic_001",
+    "timestamp": "2026-08-01T19:42:11.000Z",
+    "action_type": "oe_mcp.action_log_entry",
+    "status": "success",
+    "log_entry_hash": "sha256:15546525d42cd072b2124698764b3e0a484f785a787b3be6ee09f7e10f62d6c2",
+    "log_entry_hash_alg": "sha256+boundaryattest-stable-json-v0.1",
+    "connector_name": "synthetic-crm",
+    "tool_name": "contacts.update",
+    "result_status": "success",
+    "event_timestamp": "2026-08-01T19:42:10.125Z",
+    "selection_type": "redacted_log_entry",
+    "input_hash": "sha256:3c43f300f06cbd638a3fc92c342bcb9722d9f9e6343e750f491fde2a6202a1d3",
+    "output_hash": "sha256:59306afc6f99e176efaa4869f09b80b5ee70c8b48093fa195e9c2d1ecb93bf19",
+    "redaction_profile": "oe-mcp-portable-receipt-example",
+    "redaction_profile_version": "0.1",
+    "source_log_file": "oe-mcp-log.json",
+    "verification_limits": [
+      "Does not prove action correctness.",
+      "Does not prove authorization.",
+      "Does not prove connector credentials were appropriate.",
+      "Does not prove target system state.",
+      "Does not prove runtime integrity.",
+      "Does not replace OE MCP logs."
+    ]
+  },
+  "signature": "FauhZRzUHywD82IeHx53R0Dmjb7ZXb8TDyP7sV/D2wCXABqeRZ2dkFRpeynFMnEYHp0UOQPL/uQH7Vcb5r2/Dg==",
+  "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+}
