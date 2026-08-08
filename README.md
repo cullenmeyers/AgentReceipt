@@ -30,6 +30,8 @@ External adapters can target the minimal, experimental [BoundaryAttest Interop P
 
 For a concise index of current external implementations, integration examples, and validated receipt patterns, see [External interop patterns](docs/external-interop-patterns.md).
 
+The open provider-adoption question—especially why an executing server would sign and support a narrow claim—is covered in [Provider-side signing: adoption strategy and risk](docs/provider-side-signing-adoption.md).
+
 ## Best Conceptual Demo
 
 ```sh
