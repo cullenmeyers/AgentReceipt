@@ -1,0 +1,9 @@
+{
+  "request_id": "req_synthetic_weather_001",
+  "status": "ok",
+  "data": {
+    "location": "Example Harbor",
+    "condition": "clear",
+    "temperature_c": 24
+  }
+}

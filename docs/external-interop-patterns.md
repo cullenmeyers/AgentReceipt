@@ -31,6 +31,10 @@ The [benchmark/eval design note](benchmark-result-receipt-example.md) and [publi
 
 Where reproducibility requires both views, a producer can record a hash of the exact raw artifact bytes and a separate hash of a documented public canonical artifact. The producer must define which bytes and canonicalization each digest covers; this does not change BoundaryAttest's signed-claim canonicalization.
 
+## Pattern 5: x402 authorization-linked receipt
+
+The [draft x402 authorization-linked receipt profile](x402-authorization-linked-receipt-v0.1-draft.md) and [synthetic fixtures](../examples/x402-authorization-linked-receipt-v0.1/) show how an optional signed `authorization_ref` can bind a BoundaryAttest action/result receipt to a separate authorization artifact by digest. Authorization identity, cap, purpose, expiry, validity, and payment settlement remain external checks; the pattern does not change the Interop v0.1 schema or verifier.
+
 ## What these patterns have in common
 
 - A small signed claim crosses a system or trust boundary.

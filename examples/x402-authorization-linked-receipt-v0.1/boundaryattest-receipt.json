@@ -1,0 +1,17 @@
+{
+  "claim": {
+    "receipt_version": "0.1",
+    "receipt_role": "client_observed",
+    "event_id": "evt_x402_synthetic_001",
+    "timestamp": "2026-08-14T20:00:00.000Z",
+    "action_type": "x402.api.request",
+    "status": "success",
+    "target_ref": "https://api.example.invalid/weather/Example-Harbor",
+    "artifact_hash": "sha256:20f153c46b74372c5ca8b3219f09d256f1bc2ff874c8559a19d861e02dd19956",
+    "authorization_ref": "sha256:8c9e42178b12fce9d2b5dd6762563ab7d423050c231bd0dde129ac3ba4d17d0d",
+    "payment_protocol": "x402",
+    "request_id": "req_synthetic_weather_001"
+  },
+  "signature": "amO/JYDFU1zvp2OYMbq7z9gNCXz1nUgKJLx6dqgrEWkNLTwkRofWADGl95xnPNfqZ/7wyK+J29t1xVeCOagrBg==",
+  "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+}

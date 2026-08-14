@@ -1,0 +1,18 @@
+{
+  "artifact_type": "synthetic_external_authorization_grant",
+  "artifact_version": "placeholder-0.1",
+  "grant": {
+    "authorization_id": "auth_synthetic_001",
+    "authorizer_ref": "did:example:synthetic-authorizer",
+    "delegate_ref": "agent:synthetic-purchasing-agent",
+    "maximum_amount": "5.00",
+    "currency": "USD",
+    "purpose": "retrieve synthetic weather dataset",
+    "expires_at": "2026-08-15T00:00:00Z"
+  },
+  "signature": {
+    "algorithm": "external-placeholder",
+    "key_id": "external-key:synthetic-authorizer",
+    "value": "SYNTHETIC-NOT-A-VERIFIABLE-SIGNATURE"
+  }
+}
