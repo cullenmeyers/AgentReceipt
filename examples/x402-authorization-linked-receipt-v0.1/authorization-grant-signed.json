@@ -1,0 +1,26 @@
+{
+  "schema": "nightshift.consent_receipt.v1",
+  "schema_version": 1,
+  "grant_id": "grant_x402_synthetic_001",
+  "authorizer": "did:example:synthetic-authorizer",
+  "agent": "agent:synthetic-purchasing-agent",
+  "chain_id": 8453,
+  "scope": [
+    "retrieve_synthetic_weather"
+  ],
+  "purpose": "retrieve synthetic weather dataset",
+  "amount": "5.00",
+  "amount_cap": "5.00",
+  "currency": "USD",
+  "issued_at": "2026-08-14T19:00:00Z",
+  "expires_at": "2026-08-15T00:00:00Z",
+  "references": [],
+  "content_sha256": "c9f35725b340c88e9dfae38f44aefbf2fb22d07aafc09d32620ceb150470dc62",
+  "signatures": {
+    "authorizer": {
+      "alg": "ed25519",
+      "public_key": "3d8998727276cc1d60b08eec034865f692962822fd499d0a7b8f532ff222a0da",
+      "signature": "cadcc5b6271cafbb13d924e60e4918b7d131500789e7b4169ce56b5a264748825d65172d27d6f0f90e78c5fb8aeb0a52df93c9c9950bddd5f29ce5fc1fbe390e"
+    }
+  }
+}

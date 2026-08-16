@@ -5,25 +5,39 @@ This documentation-only fixture shows a BoundaryAttest Interop v0.1 receipt link
 ## Files
 
 - `boundaryattest-receipt.json` is a normal Interop v0.1 envelope. Its signed claim includes the optional adapter field `authorization_ref` and binds `result-artifact.json` with `artifact_hash`.
-- `authorization-grant-placeholder.json` stands in for an external signed consent/authorization receipt. Its amount, currency, purpose, expiry, identity references, and signature rules belong entirely to that external system. Its deliberately marked placeholder signature is not verifiable and must never be accepted as real authorization.
+- `authorization-grant-signed.json` is a really signed, synthetic consent receipt. Its own canonicalization and Ed25519 signature are independent of BoundaryAttest.
+- `authorization-grant.json` is the unsigned source body used to create the signed fixture; it makes the authorized facts inspectable without treating the synthetic key as a real identity.
+- `authorization-grant-placeholder.json` is retained as a negative example showing why a labeled placeholder signature must not be accepted as authorization.
 - `result-artifact.json` is the synthetic paid/requested API result being attested.
+- `verify-authorization-link.py` is a dependency-light composition checker. It verifies the external grant under its own rules, verifies the BoundaryAttest envelope, normalizes `authorization_ref` as `sha256:<grant content_sha256>`, and checks the exact result-artifact bytes.
 
-For these fixtures, both digest fields are `sha256:` plus lowercase SHA-256 of the exact checked-in file bytes, including formatting and the final newline:
+The grant's `content_sha256` is SHA-256 over its canonical body, excluding `content_sha256` and `signatures` (RFC 8785-compatible JSON for this float-free fixture). The BoundaryAttest adapter uses the explicit `sha256:<hex>` form, so the comparison rule is unambiguous without changing the Interop v0.1 schema.
 
-```text
-authorization_ref = sha256(exact bytes of authorization-grant-placeholder.json)
-artifact_hash     = sha256(exact bytes of result-artifact.json)
+## Run
+
+From the repository root:
+
+```sh
+python3 examples/x402-authorization-linked-receipt-v0.1/verify-authorization-link.py
 ```
 
-The BoundaryAttest receipt is signed with the repository's public, demo-only Python interop key so its envelope has a structurally ordinary signature and key ID. The key is not copied into this folder because a key shipped beside a receipt would not establish trust. It can be checked with the expected public key at `../python-interop-v0.1/demo-public-key.pem`.
+Expected result includes:
 
-## Expected verification sequence
+```json
+{
+  "ok": true,
+  "authorization_ref_matches_grant_digest": true,
+  "result_artifact_hash_matches": true
+}
+```
 
-1. Verify the BoundaryAttest signature and recompute `artifact_hash` over the exact result bytes.
-2. Recompute `authorization_ref` over the exact authorization artifact bytes.
-3. Verify a real external authorization artifact under its own rules. This fixture intentionally cannot pass that step because its signature is a labeled placeholder.
-4. Let a domain-specific checker decide whether the payment/action falls within the external cap, purpose, expiry, and other conditions.
+## Verification boundary
 
-A matching link means only that the signed BoundaryAttest claim names those exact external artifact bytes. BoundaryAttest does not prove human identity, legal sufficiency, authorization validity, payment settlement, safety, correctness, or runtime integrity. Its narrow proof is that the expected signing key signed the unchanged claim.
+1. Verify the external grant's digest and authorizer signature with the grant's own verifier.
+2. Verify the BoundaryAttest signature and recompute `artifact_hash` over the exact result bytes.
+3. Compare `authorization_ref` to the external artifact's self-declared digest, after the explicit `sha256:` normalization.
+4. Let a domain-specific checker decide whether the action falls within the external cap, purpose, expiry, and other conditions.
 
-See the [draft profile](../../docs/x402-authorization-linked-receipt-v0.1-draft.md) for the complete boundary and rationale.
+A matching link means only that the signed BoundaryAttest claim names the exact external authorization digest and result artifact. BoundaryAttest does not prove human identity, legal sufficiency, authorization validity, payment settlement, safety, correctness, or runtime integrity. The authorizer key, authorization facts, and result are synthetic.
+
+This example deliberately makes no Interop v0.1 schema change, no core verifier change, and no required authorization layer. The authorization artifact is optional and external. See the [draft profile](../../docs/x402-authorization-linked-receipt-v0.1-draft.md) for the complete boundary and rationale.
