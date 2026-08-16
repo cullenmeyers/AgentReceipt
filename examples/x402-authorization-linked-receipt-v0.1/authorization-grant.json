@@ -1,0 +1,16 @@
+{
+  "schema": "nightshift.consent_receipt.v1",
+  "schema_version": 1,
+  "grant_id": "grant_x402_synthetic_001",
+  "authorizer": "did:example:synthetic-authorizer",
+  "agent": "agent:synthetic-purchasing-agent",
+  "chain_id": 8453,
+  "scope": ["retrieve_synthetic_weather"],
+  "purpose": "retrieve synthetic weather dataset",
+  "amount": "5.00",
+  "amount_cap": "5.00",
+  "currency": "USD",
+  "issued_at": "2026-08-14T19:00:00Z",
+  "expires_at": "2026-08-15T00:00:00Z",
+  "references": []
+}
