@@ -14,6 +14,23 @@ The stronger case is a cross-boundary agent or API action: a user or organizatio
 
 API catalog and agent-readiness work also points to a possible gap: an API may describe available operations while lacking a declared, verifiable account of what an agent was permitted to do and what it actually did. A receipt could help carry part of that account across systems, but BoundaryAttest does not yet establish that providers or customers will adopt it for this purpose.
 
+## Evidence from discoverable dry-run support
+
+“71 of 26,568 scored providers (0.27%) declared a dry-run or simulate mode, as measured by API Evangelist on 2026-08-12. This counts what is discoverable in machine-readable form and is therefore a floor.”
+
+This statistic measures machine-readable, discoverable declarations, not all dry-run or simulation behavior that may exist internally or be documented elsewhere. It may therefore undercount genuine dry-run or simulate behavior. At the same time, naive keyword matching would overcount: terms such as `preview` and `validate` often refer to content rendering or request/schema validation rather than simulation of an operation's effects.
+
+The finding is evidence that a discoverability and attestation gap exists, but it does not prove customer or provider demand for BoundaryAttest. Nor does it imply that APIs without these declarations are unsafe.
+
+## Two provider adoption motions
+
+The evidence points to two distinct provider populations and messages:
+
+- for providers with dry-run or simulate behavior: **sign what you already simulate**; and
+- for x402 or other per-call payment providers: **sign what you already settle**.
+
+The observed intersection between these populations is empty. That means they should be treated as two different adoption motions, not as one unified cohort. Dry-run and simulation support is stronger evidence that the gap exists: providers already distinguish a proposed operation from its effects, creating a natural place for an attributable receipt. But x402 and per-call payment providers are the stronger first-customer wedge because settlement already involves a counterparty, amount, request, outcome, and possible dispute.
+
 ## Why `server_attested` is the important test
 
 A `client_observed` receipt is primarily the client's signed account of what it sent and received. It can preserve client-side evidence, but it is weak when the dispute is specifically about what a provider received, permitted, refused, or executed.
@@ -40,7 +57,7 @@ Providers may rationally prefer their existing logs, audit products, or contract
 
 The central adoption risk is that the party whose signature would add the most value has the weakest incentive to provide it. A technically interoperable receipt format is insufficient if providers will not operate signing keys, commit to claim semantics, and support the resulting evidence.
 
-The concrete milestone is therefore not another receipt variant. It is getting a real provider or executing server to emit a `server_attested` receipt in a real or near-production flow, then documenting:
+The concrete milestone is therefore not another receipt variant or additional format work. One real provider or executing server signing a `server_attested` receipt in a real or near-production flow matters more than additional format work. That implementation should document:
 
 - the customer, audit, or dispute problem it removes;
 - why the provider agreed to sign;
