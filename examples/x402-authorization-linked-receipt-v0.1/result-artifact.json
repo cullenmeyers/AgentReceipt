@@ -1,6 +1,11 @@
 {
   "request_id": "req_synthetic_weather_001",
   "status": "ok",
+  "payment": {
+    "executor_ref": "agent:synthetic-purchasing-agent",
+    "transaction_ref": "tx:synthetic:x402-payment-001",
+    "reported_status": "submitted"
+  },
   "data": {
     "location": "Example Harbor",
     "condition": "clear",

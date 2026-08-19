@@ -25,6 +25,14 @@ An integrating profile may instead use a structured value with a clearly defined
 
 `authorization_ref` is a content binding, not an authorization decision. It does not import the referenced artifact's semantics into BoundaryAttest and does not establish that the artifact is authentic, valid, applicable, or legally sufficient.
 
+## Delegated authorization / operator approval gates
+
+Some flows separate the parties involved in a spend or irreversible action. The **BoundaryAttest receipt signer** attests the action, result, or handoff claim; the **executor or agent** performs, submits, or broadcasts the action; and the **authorizer or operator** approves the action or spend before execution. These roles may be held by different parties.
+
+In such a flow, `authorization_ref` may point to an external authorization or approval artifact whose own format and rules distinguish the authorizer from the executor and describe an amount or cap, purpose, scope, expiry, or other constraints. BoundaryAttest does not define or evaluate those roles or conditions. By binding the action or result claim to the external artifact's digest, a receipt can preserve the distinction between "agent decided and acted" and "agent executed an externally authorized decision."
+
+This binding does not prove human identity, legal sufficiency, policy validity, payment settlement, correctness, safety, or runtime integrity. Those remain external facts and checks.
+
 ## Verification flow
 
 1. Verify the BoundaryAttest receipt signature using an independently trusted expected public key, then recompute and compare any referenced action, artifact, or result hashes.
