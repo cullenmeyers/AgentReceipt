@@ -25,6 +25,19 @@ An integrating profile may instead use a structured value with a clearly defined
 
 `authorization_ref` is a content binding, not an authorization decision. It does not import the referenced artifact's semantics into BoundaryAttest and does not establish that the artifact is authentic, valid, applicable, or legally sufficient.
 
+## Mutable authorization state and incremental adoption
+
+During early adoption, an authorization-basis reference may identify mutable live state rather than a stable artifact. For example, it might name an approval flag or path in a KV store such as `allow_mainnet_treasury_contribution=true`. This can improve transparency about the basis the signer says it relied on without requiring an operator to replace its existing state store first. The tradeoff is explicit: if the store does not preserve history, an independent verifier cannot later replay the referenced state or establish that the flag had that value when the action executed.
+
+Authorization-basis references form an adoption ladder:
+
+- **Mutable live-state reference:** identifies a current approval flag, record, or path. It is useful context, but changes to unversioned state can erase the historical authorization basis.
+- **Captured snapshot or hash artifact:** lets a verifier compare the receipt with captured state, while still requiring trust in the signer or runtime that captured it.
+- **Commit-backed or hash-chained state:** preserves a stronger, replayable authorization basis with tamper-evident history.
+- **Signed authorization artifact:** allows the authorization statement to be authenticated under its own verification rules. This is the strongest pattern in this ladder, but remains optional.
+
+BoundaryAttest can bind an action or result claim to the authorization basis the signer says it relied on. When that basis is mutable and not historically preserved, BoundaryAttest does **not** prove that the referenced state had the claimed value at execution time. Strong independent verification therefore benefits from eventually making the basis content-addressed, hash-chained, commit-backed, or separately signed. These are progressive strengthening options, not prerequisites for using this profile; `authorization_ref` itself remains optional.
+
 ## Delegated authorization / operator approval gates
 
 Some flows separate the parties involved in a spend or irreversible action. The **BoundaryAttest receipt signer** attests the action, result, or handoff claim; the **executor or agent** performs, submits, or broadcasts the action; and the **authorizer or operator** approves the action or spend before execution. These roles may be held by different parties.
@@ -35,12 +48,16 @@ This binding does not prove human identity, legal sufficiency, policy validity, 
 
 ## Verification flow
 
+For a digest-backed authorization artifact, the full verification flow is:
+
 1. Verify the BoundaryAttest receipt signature using an independently trusted expected public key, then recompute and compare any referenced action, artifact, or result hashes.
 2. Fetch the external authorization artifact named by `authorization_ref` and recompute its digest using the profile's declared byte or canonicalization rule.
 3. Verify the external authorization artifact using its own signature, identity, delegation, freshness, revocation, and validity rules.
 4. If required, a domain-specific checker compares the payment or action with the external authorization envelope, including its amount or cap, purpose, expiry, subject, resource, and any other constraints.
 
 Steps 2–4 are outside the BoundaryAttest Interop v0.1 verifier. A valid BoundaryAttest signature alone must not be treated as successful authorization or settlement.
+
+For a mutable live-state reference, only the checks supported by that state system are available. Reading its current value is not a substitute for historical evidence of its value at execution time.
 
 ## Non-proofs
 

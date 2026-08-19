@@ -10,6 +10,8 @@ This documentation-only fixture shows a BoundaryAttest Interop v0.1 receipt link
 
 The fixture therefore models three distinct roles: the BoundaryAttest receipt signer attests the claim, the agent executes the request and payment, and the operator approves the bounded spend beforehand. `authorization_ref` binds the signed action/result claim to the exact external approval artifact bytes; it does not turn the receipt signer or executor into the authorizer.
 
+This fixture demonstrates the stronger, content-addressed case. An early integration may instead reference mutable live approval state, such as a flag or path in a KV store. That weaker reference can document the authorization basis the signer says it used, but without preserved history it cannot independently prove what value the state had at execution time. Captured snapshots or hashes are stronger, commit-backed or hash-chained state is replayable, and separately signed authorization artifacts are strongest. These are optional adoption steps, not requirements for BoundaryAttest or for `authorization_ref`.
+
 For these fixtures, both digest fields are `sha256:` plus lowercase SHA-256 of the exact checked-in file bytes, including formatting and the final newline:
 
 ```text
