@@ -35,6 +35,10 @@ Where reproducibility requires both views, a producer can record a hash of the e
 
 The [draft x402 authorization-linked receipt profile](x402-authorization-linked-receipt-v0.1-draft.md) and [synthetic fixtures](../examples/x402-authorization-linked-receipt-v0.1/) show how an optional signed `authorization_ref` can bind a BoundaryAttest action/result receipt to a separate authorization artifact by digest. Authorization identity, cap, purpose, expiry, validity, and payment settlement remain external checks; the pattern does not change the Interop v0.1 schema or verifier.
 
+## Pattern 6: exported gate decision and asynchronous run result
+
+The [exported gate decision and run result design note](exported-gate-and-run-result-profile-v0.1-draft.md) narrows receipts to two trust-boundary seams: exported gate decisions and asynchronous result handoffs. It distinguishes portable public-key receipts from shared-secret webhook delivery signatures and explicitly excludes same-boundary gate calls, RBAC restatements, and generic high-volume tool-call receipts. It is a design note only and does not change the Interop v0.1 schema.
+
 ## What these patterns have in common
 
 - A small signed claim crosses a system or trust boundary.
