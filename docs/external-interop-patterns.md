@@ -39,6 +39,10 @@ The [draft x402 authorization-linked receipt profile](x402-authorization-linked-
 
 The [exported gate decision and run result design note](exported-gate-and-run-result-profile-v0.1-draft.md) narrows receipts to two trust-boundary seams: exported gate decisions and asynchronous result handoffs. Its signed claims carry an explicit draft profile version and self-describing digest bindings; an exported gate decision binds both the request and exact response body. It distinguishes portable public-key receipts from shared-secret webhook delivery signatures and explicitly excludes same-boundary gate calls, RBAC restatements, and generic high-volume tool-call receipts. It is a design note only and does not change the Interop v0.1 schema.
 
+## Pattern 7: Pragma bundle export receipt
+
+The [Pragma bundle export receipt draft](pragma-bundle-export-receipt-v0.1-draft.md) and [synthetic fixture](../examples/pragma-bundle-export-receipt-v0.1/) show an external signed claim over Pragma-computed bundle, project, root, and export metadata values. Pragma remains responsible for validating the `.pragma` bundle's internal structure and content; BoundaryAttest verifies only the surrounding claim, and a relying verifier compares its fields with values from Pragma's normal verification path. This docs/examples-only pattern is not an integration, endorsement, or statement of Pragma support.
+
 ## What these patterns have in common
 
 - A small signed claim crosses a system or trust boundary.

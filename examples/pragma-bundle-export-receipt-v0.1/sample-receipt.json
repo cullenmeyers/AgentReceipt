@@ -1,0 +1,32 @@
+{
+  "claim": {
+    "receipt_version": "0.1",
+    "profile": "pragma.bundle.export-receipt",
+    "profile_version": "0.1",
+    "receipt_role": "client_observed",
+    "event_id": "evt_pragma_bundle_export_synthetic_001",
+    "timestamp": "2026-08-28T22:15:00.000Z",
+    "action_type": "pragma.bundle.export",
+    "status": "success",
+    "bundle_fingerprint": "pragma:bundle-fingerprint:synthetic-placeholder-7f3a9c",
+    "project_fingerprint": "pragma:project-fingerprint:synthetic-placeholder-2d81b4",
+    "root_ref": "pragma:root:synthetic-placeholder-main-flow",
+    "export_metadata_hash": "sha256:685d0763d79ec38153674faab49520c69bcf1f417f9a5b4fea2b8bae782c2ce1",
+    "export_metadata_hash_alg": "sha256+boundaryattest-stable-json-v0.1",
+    "pragma_version": "synthetic-placeholder-version",
+    "bundle_format_version": "synthetic-placeholder-format-version",
+    "signer": {
+      "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+    },
+    "verification_limits": [
+      "Does not prove the Flow is correct.",
+      "Does not prove the bundle is safe to import.",
+      "Does not replace Pragma bundle validation.",
+      "Does not prove the signer is legally authorized.",
+      "Does not prove workspace, user, or organization identity without separately trusted key custody and identity mapping.",
+      "Does not prove imported execution will behave correctly."
+    ]
+  },
+  "signature": "9vGsGkqrkBhjMyZY42pae9HB5yKRy5Rcw8UMooVMAnba+S+f/MU2Ken/5X28KA1VUfF0DJWulJrhk3DkevMbDA==",
+  "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+}
