@@ -53,6 +53,8 @@ The [Pragma bundle export receipt draft](pragma-bundle-export-receipt-v0.1-draft
 
 Additional [TrustMCP](../examples/trustmcp-post-scan-receipt/), [FAF](../examples/faf-mcp-handoff-v0.1/), and [Airflow](../examples/airflow-report-receipt/) examples explore related handoff and post-action receipt seams; they are experimental examples, not adoption claims.
 
+The [synthetic SCRIBE report example](../examples/openclaw-scribe-report-v0.1/) narrows the SOC use case to the external handoff of an exact report artifact. Internal SOC logs remain authoritative inside the trust domain, lineage is represented only by reference hashes, and RESPONDER is explicitly optional. This is a docs/examples-only pattern, not an OpenClaw, Wazuh, or OpenCTI integration or endorsement.
+
 ## What BoundaryAttest does not prove
 
 A passing signature check proves only that the corresponding expected key signed the unchanged claim. It does not prove truth, authorization, safety, compliance, signer trustworthiness, key custody, runtime integrity, artifact correctness, freshness, completeness, or downstream state. Relying parties must separately define signer trust, semantic policy, replay/freshness rules, artifact retrieval and digest checks, and the action taken after verification.

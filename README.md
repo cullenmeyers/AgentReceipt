@@ -30,6 +30,8 @@ External adapters can target the minimal, experimental [BoundaryAttest Interop P
 
 For a concise index of current external implementations, integration examples, and validated receipt patterns, see [External interop patterns](docs/external-interop-patterns.md).
 
+For a narrow synthetic SOC example, see the [SCRIBE external report handoff fixture](examples/openclaw-scribe-report-v0.1/). It signs the external handoff claim for an exact incident-report artifact while leaving internal Wazuh/OpenCTI/OpenClaw records inside the originating trust domain.
+
 The open provider-adoption question—especially why an executing server would sign and support a narrow claim—is covered in [Provider-side signing: adoption strategy and risk](docs/provider-side-signing-adoption.md).
 
 ## Best Conceptual Demo

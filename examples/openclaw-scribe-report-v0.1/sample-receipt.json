@@ -1,0 +1,24 @@
+{
+  "claim": {
+    "receipt_version": "0.1",
+    "receipt_role": "server_attested",
+    "event_id": "evt_scribe_handoff_001",
+    "timestamp": "2026-08-18T15:05:00.000Z",
+    "action_type": "soc.report.external_handoff",
+    "status": "success",
+    "incident_ref": "INC-2026-0042",
+    "report_ref": "incident/INC-2026-0042/report.md",
+    "target_ref": "external-reviewer:synthetic",
+    "artifact_hash": "sha256:5b35d3cfbc1b44bce8a1618580d1f94c31a76795f9b3f962ac9160e27a67967e",
+    "report_generated_at": "2026-08-18T14:22:31.000Z",
+    "lineage": {
+      "scout_ref_hash": "sha256:db633eb9b9f89d4266990aba34e6c6e2248253cbc23c5db0ad444f515cae8e17",
+      "oracle_ref_hash": "sha256:b186775f300454f655a1e9e17c72a2d9694ebfb6265aae5b3958467cebeff607",
+      "defendrix_ref_hash": "sha256:c6f93240a65c5a67bc8a10689e7bfb1ce892f51e75dccd96b51e16854e97e224",
+      "responder_ref_hash": null
+    },
+    "handoff_type": "external_incident_report"
+  },
+  "signature": "UHW4+BN+JUfurM+SjBdXyKu81eBAPrM3abYBwh/fYBTxIZoorODLvvJVMrqVfBB/syoETJeX5ZI2w1jT7jTTBA==",
+  "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+}
