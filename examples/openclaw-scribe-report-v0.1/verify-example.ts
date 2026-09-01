@@ -30,7 +30,9 @@ function assertEqual(label: string, actual: unknown, expected: unknown): void {
 function main(): void {
   const receiptText = readFileSync(resolve(EXAMPLE_DIR, "sample-receipt.json"), "utf8");
   const publicKeyPem = readFileSync(resolve(EXAMPLE_DIR, "sample-public-key.pem"), "utf8");
-  const reportBytes = readFileSync(resolve(EXAMPLE_DIR, "synthetic-incident-report.md"));
+  const finalArtifactBytes = readFileSync(
+    resolve(EXAMPLE_DIR, "final-external-reviewer-report.md"),
+  );
 
   const verification = verifyInteropReceipt(receiptText, publicKeyPem);
   if (!verification.ok) throw new Error(`receipt verification failed: ${verification.reason}`);
@@ -42,13 +44,14 @@ function main(): void {
   assertEqual("receipt_role", claim.receipt_role, "server_attested");
   assertEqual("action_type", claim.action_type, "soc.report.external_handoff");
   assertEqual("incident_ref", claim.incident_ref, "INC-2026-0042");
-  assertEqual("artifact_hash", claim.artifact_hash, sha256Bytes(reportBytes));
+  assertEqual("artifact_hash", claim.artifact_hash, sha256Bytes(finalArtifactBytes));
+  assertEqual("responder_status", claim.responder_status, "no_response_required");
   assertEqual("responder_ref_hash", lineage.responder_ref_hash, null);
 
   console.log("PASS sample-receipt.json: Interop Profile v0.1 signature verified");
-  console.log("PASS synthetic-incident-report.md: exact report bytes match artifact_hash");
-  console.log("PASS lineage: optional RESPONDER is represented as null");
-  console.log("LIMIT: verification does not establish report truth, source-record integrity, authorization, delivery, compliance, signer trust, key custody, or runtime integrity.");
+  console.log("PASS final-external-reviewer-report.md: exact recipient artifact bytes match artifact_hash");
+  console.log("PASS RESPONDER: no_response_required with a null reference is explicit and consistent");
+  console.log("LIMIT: verification does not establish delivery, report truth, alert reality, agent or redaction correctness, authorization, source completeness, compliance, signer trust, key custody, or SOC runtime integrity.");
 }
 
 try {

@@ -7,10 +7,11 @@
     "action_type": "soc.report.external_handoff",
     "status": "success",
     "incident_ref": "INC-2026-0042",
-    "report_ref": "incident/INC-2026-0042/report.md",
+    "report_ref": "external-reviewer/INC-2026-0042/report.md",
     "target_ref": "external-reviewer:synthetic",
-    "artifact_hash": "sha256:5b35d3cfbc1b44bce8a1618580d1f94c31a76795f9b3f962ac9160e27a67967e",
+    "artifact_hash": "sha256:668a51abe4167014cf8265a2da07810d00e6918d80704a1970a51fd6889ae54f",
     "report_generated_at": "2026-08-18T14:22:31.000Z",
+    "responder_status": "no_response_required",
     "lineage": {
       "scout_ref_hash": "sha256:db633eb9b9f89d4266990aba34e6c6e2248253cbc23c5db0ad444f515cae8e17",
       "oracle_ref_hash": "sha256:b186775f300454f655a1e9e17c72a2d9694ebfb6265aae5b3958467cebeff607",
@@ -19,6 +20,6 @@
     },
     "handoff_type": "external_incident_report"
   },
-  "signature": "UHW4+BN+JUfurM+SjBdXyKu81eBAPrM3abYBwh/fYBTxIZoorODLvvJVMrqVfBB/syoETJeX5ZI2w1jT7jTTBA==",
+  "signature": "rvhvQ8i1FIntIzSbdQ6NLd4qbk8X0hA0d+1g50L+d5w3sJL+KVZAUKsXsJTPACAPqugLisdpAAJ4rgmhDda+Cg==",
   "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
 }
