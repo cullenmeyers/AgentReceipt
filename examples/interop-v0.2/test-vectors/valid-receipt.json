@@ -1,0 +1,5 @@
+{
+  "claim": {"receipt_version":"0.2","receipt_role":"server_attested","event_id":"evt_v02_001","timestamp":"2026-09-06T12:00:00.000Z","action_type":"causly.ship_change","status":"success","Z_adapter":"upper","adapter_metadata":{"2":"two","10":"ten","é":"precomposed","é":"combining","😀":"astral"},"measurements":[0,1e+30,1e-7]},
+  "signature": "3OWDQLbVtj1fVUoPNRjK+AiZLPKdJU7lnpsTVxJ+DmrzBRIO5uNaPM2LoxsIUrgp+sz1TqjWPyECVUhsNe2YBg==",
+  "public_key_id": "sha256:a3fc65e43c26d006f58b2efabd7ad3c4cd940fe6bd903ed2fdb38d1714b2319e"
+}

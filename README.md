@@ -26,7 +26,9 @@ npm run example:proof-kit
 
 The proof kit uses demo-only signer trust. Receipts prove signature and content integrity only; they do not prove truth, authorization, compliance, runtime integrity, or business outcome.
 
-External adapters can target the minimal, experimental [BoundaryAttest Interop Profile v0.1](docs/interop-profile-v0.1.md); the [dependency-free adapter guide](docs/interop-adapter-guide-v0.1.md) provides the short implementation path. Its [JSON Schema](docs/schemas/interop-receipt-v0.1.schema.json) and [verification trust/limitations note](docs/interop-verification-limits-v0.1.md) define the structural contract and the narrow meaning of a passing check.
+External adapters should target the experimental [BoundaryAttest Interop Profile v0.2](docs/interop-profile-v0.2.md), which uses the language-neutral RFC 8785 JSON Canonicalization Scheme. Its [adapter guide](docs/interop-adapter-guide-v0.2.md), [JSON Schema](docs/schemas/interop-receipt-v0.2.schema.json), [verification limits](docs/interop-verification-limits-v0.2.md), and shared JavaScript/Python vectors define the compatibility target.
+
+[Interop Profile v0.1](docs/interop-profile-v0.1.md) is frozen for legacy verification. It deliberately retains the original `stableJson` and `localeCompare()` behavior, existing signatures, vectors, Python limitations, and verifier failure codes. Canonicalization changed only with the receipt-version bump to `"0.2"`, so already-issued v0.1 signatures are not reinterpreted.
 
 For a concise index of current external implementations, integration examples, and validated receipt patterns, see [External interop patterns](docs/external-interop-patterns.md).
 
