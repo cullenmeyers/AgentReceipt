@@ -24,6 +24,11 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install dependencies
         run: npm ci
 
@@ -32,6 +37,18 @@ jobs:
 
       - name: Validate interop v0.1 vectors
         run: npm run example:interop-v0.1
+
+      - name: Validate JavaScript interop v0.2 vectors
+        run: npm run example:interop-v0.2
+
+      - name: Install pinned Python interop v0.2 dependencies
+        run: python3 -m pip install -r examples/python-interop-v0.2/requirements.txt
+
+      - name: Validate Python interop v0.2 vectors
+        run: npm run example:python-interop-v0.2
+
+      - name: Validate interop v0.2 cross-language signatures
+        run: npm run example:interop-v0.2:cross
 
       - name: Validate Code Engine reverse fixtures
         run: npm run example:interop-code-engine

@@ -1,0 +1,2 @@
+cryptography==46.0.7
+rfc8785==0.1.4
